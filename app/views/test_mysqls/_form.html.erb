@@ -1,0 +1,21 @@
+<%= form_for(@test_mysql) do |f| %>
+  <% if @test_mysql.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@test_mysql.errors.count, "error") %> prohibited this test_mysql from being saved:</h2>
+
+      <ul>
+      <% @test_mysql.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

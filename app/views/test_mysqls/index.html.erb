@@ -1,0 +1,27 @@
+<h1>Listing test_mysqls</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @test_mysqls.each do |test_mysql| %>
+      <tr>
+        <td><%= test_mysql.content %></td>
+        <td><%= link_to 'Show', test_mysql %></td>
+        <td><%= link_to 'Edit', edit_test_mysql_path(test_mysql) %></td>
+        <td><%= link_to 'Destroy', test_mysql, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Test mysql', new_test_mysql_path %>

@@ -1,0 +1,17 @@
+development:  &development
+  adapter: postgresql
+  encoding: unicode
+  database: mydb
+  pool: 5
+  username: postgres
+  password: dexteric
+  encoding: utf8
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: mydb
+  pool: 5
+  username: postgres
+  password: dexteric
+  encoding: utf8

@@ -1,0 +1,5 @@
+ database_details:
+      adapter: mysql
+      database: mydb
+      username: root
+      password:
