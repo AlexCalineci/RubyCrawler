@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029143920) do
+ActiveRecord::Schema.define(version: 20131030073644) do
 
   create_table "test_mysqls", force: true do |t|
     t.text     "content"
@@ -19,7 +19,10 @@ ActiveRecord::Schema.define(version: 20131029143920) do
     t.datetime "updated_at"
   end
 
-  create_table "tests", id: false, force: true do |t|
+  create_table "test_postgresqls", force: true do |t|
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

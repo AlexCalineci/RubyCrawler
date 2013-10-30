@@ -3,12 +3,20 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc1'
 #gem 'client_database_switching',github: 'HHRy/client_database_switching'
-
+gem 'bootstrap-sass'
+gem "less-rails"
+gem 'twitter-bootstrap-rails'
+gem 'will_paginate-bootstrap'
+gem 'bootstrap-will_paginate'
+gem 'therubyracer'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 gem "pg", "~> 0.17.0"
 gem 'mysql2'
-
+gem 'activerecord-oracle_enhanced-adapter', :git => 'git://github.com/rsim/oracle-enhanced.git'
+gem 'ruby-oci8', '~> 2.1.0'
+gem "nokogiri", "~> 1.6.0"
+#gem 'open-uri'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'

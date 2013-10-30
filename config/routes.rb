@@ -1,5 +1,23 @@
 RubyCrawler::Application.routes.draw do
-  resources :test_mysqls
+  resources :test_oracles do
+    collection do
+         get :populate
+     end
+  end
+
+  root  'home#index'
+  
+  resources :test_postgresqls do
+    collection do
+         get :populate
+     end
+  end
+
+  resources :test_mysqls do
+    collection do
+         get :populate
+     end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

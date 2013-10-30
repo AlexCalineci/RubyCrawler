@@ -3,8 +3,43 @@ class TestMysqlsController < ApplicationController
 
   # GET /test_mysqls
   # GET /test_mysqls.json
+  WillPaginate.per_page = 100
+
+
   def index
-    @test_mysqls = TestMysql.all
+    @test_mysqls = TestMysql.paginate(:page => params[:page]).order("created_at desc")
+  end
+
+
+
+  def populate
+    #require 'rubygems'
+   # require 'nokogiri'
+    require 'open-uri'
+    #require 'mysql'
+    url='http://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
+
+    #SUBDIR = 'data-hold'
+    #Dir.mkdir(SUBDIR) unless File.exists?SUBDIR
+
+    #DBNAME = "#{SUBDIR}/mydb"
+    #DB = MYSQL2::Database.new( DBNAME )
+    
+    rows = Nokogiri::HTML(open(url)).css('table.sortable tr')[1..-1]
+    puts "Number of rows: #{rows.length}"
+    rows.each do |row|
+      tds = row.css('td').map{|td| td.text.strip}
+      puts tds.join(", ")
+      TestMysql.create(:content=>tds[4].to_s)
+      #tds[4] = '1'
+      #sql = "INSERT INTO test_mysqls(content) VALUES("+'"'+tds[4].to_s+'"'+")"
+      #sql2 = "INSERT INTO test_postgresqls(content) VALUES("+'"'+tds[4].to_s+'"'+")"
+ 
+     # ActiveRecord::Base.connection.execute(sql)
+     #ActiveRecord::Base.connection.execute(sql2)
+     #ActiveRecord::Base.connection.execute(sql)
+    
+    end
   end
 
   # GET /test_mysqls/1

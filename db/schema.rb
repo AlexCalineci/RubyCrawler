@@ -11,12 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131029143920) do
+ActiveRecord::Schema.define(version: 20131030134342) do
 
-  create_table "test_mysqls", force: true do |t|
-    t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+# Could not dump table "test_mysqls" because of following NoMethodError
+#   undefined method `column_spec_with_oracle_enhanced' for #<ActiveRecord::ConnectionAdapters::Mysql2Adapter:0xa6c0430>
+
+# Could not dump table "test_oracles" because of following NoMethodError
+#   undefined method `column_spec_with_oracle_enhanced' for #<ActiveRecord::ConnectionAdapters::Mysql2Adapter:0xa6c0430>
+
+# Could not dump table "test_postgresqls" because of following NoMethodError
+#   undefined method `column_spec_with_oracle_enhanced' for #<ActiveRecord::ConnectionAdapters::Mysql2Adapter:0xa6c0430>
 
 end

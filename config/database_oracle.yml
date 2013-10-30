@@ -1,0 +1,20 @@
+development:  &development
+  adapter: oracle_enhanced
+  encoding: unicode
+  database: xe
+  username: hr
+  password: sex
+  database: //192.168.206.180:1521/xe
+  encoding: utf8
+
+
+test:
+  adapter: oracle_enhanced
+  encoding: unicode
+  database: xe
+  username: hr
+  password: sex
+  database: //192.168.206.180:1521/xe
+  encoding: utf8
+
+
